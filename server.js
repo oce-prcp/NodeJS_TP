@@ -7,7 +7,6 @@ const data = JSON.parse(fs.readFileSync('infos.json', 'utf8'));
 
 app.use(express.json())
 
-// Configuration de la connexion à la base de données
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -15,7 +14,6 @@ const connection = mysql.createConnection({
     database: 'exo_users'
   });
   
-  // Établir la connexion à la base de données
   connection.connect(err => {
     if (err) {
       console.error('Erreur de connexion à la base de données :', err);
@@ -24,7 +22,6 @@ const connection = mysql.createConnection({
     console.log('Connexion à la base de données réussie');
   });
   
-  // Endpoint pour récupérer tous les utilisateurs
   app.get('/utilisateurs', (req, res) => {
     connection.query('SELECT * FROM utilisateur', (err, results) => {
       if (err) {
@@ -33,7 +30,7 @@ const connection = mysql.createConnection({
       }
       res.json(results);
     });
-  });
+});
 
 
 function saveData() {
@@ -112,7 +109,6 @@ app.get('/commentaires', (req, res) => {
     res.status(200).json(data.commentaires);
     }
 );
-
 
 app.listen(3000, () => {
     console.log('Server started');
