@@ -59,9 +59,17 @@ function printCommentsForTechnology(technologieId) {
     console.log(commentaires);
 }
 
+function printCommentsForUser(utilisateurId) {
+    const commentaires = data.commentaires.filter(commentaire => commentaire.utilisateur_id === utilisateurId);
+    console.log('Comments for user', utilisateurId);
+    console.log(commentaires);
+}
 
-
-
+function printCommentsBeforeDate(dateLimite) {
+    const commentaires = data.commentaires.filter(commentaire => commentaire.date_creation_commentaire < dateLimite);
+    console.log('Comments prior to', dateLimite, ':');
+    console.log(commentaires);
+}
 
 app.listen(3000, () => {
     console.log('Server started');
