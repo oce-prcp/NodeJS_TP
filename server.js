@@ -1,8 +1,40 @@
-const exports = require('express');
+const express = require('express');
 const app = express();
 const fs = require('fs');
+const mysql = require('mysql');
 
 const data = JSON.parse(fs.readFileSync('infos.json', 'utf8'));
+
+app.use(express.json())
+
+// Configuration de la connexion à la base de données
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'exo_users'
+  });
+  
+  // Établir la connexion à la base de données
+  connection.connect(err => {
+    if (err) {
+      console.error('Erreur de connexion à la base de données :', err);
+      return;
+    }
+    console.log('Connexion à la base de données réussie');
+  });
+  
+  // Endpoint pour récupérer tous les utilisateurs
+  app.get('/utilisateurs', (req, res) => {
+    connection.query('SELECT * FROM utilisateur', (err, results) => {
+      if (err) {
+        res.status(500).json({ error: 'Erreur lors de la récupération des utilisateurs' });
+        return;
+      }
+      res.json(results);
+    });
+  });
+
 
 function saveData() {
     fs.writeFileSync('infos.json', JSON.stringify(data, null, 2), 'utf8');
@@ -70,6 +102,17 @@ function printCommentsBeforeDate(dateLimite) {
     console.log('Comments prior to', dateLimite, ':');
     console.log(commentaires);
 }
+
+app.get('/', (req, res) => {
+    res.status(200).json(data.utilisateurs);
+    }
+);
+
+app.get('/commentaires', (req, res) => {
+    res.status(200).json(data.commentaires);
+    }
+);
+
 
 app.listen(3000, () => {
     console.log('Server started');
