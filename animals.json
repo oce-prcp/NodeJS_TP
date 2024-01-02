@@ -1,32 +1,60 @@
-[
-    {
-        "nom": "Lion",
-        "classe": "Mammifère",
-        "habitat": "Savane",
-        "alimentation": "Carnivore"
-    },
-    {
-        "nom": "Dauphin",
-        "classe": "Mammifère",
-        "habitat": "Océans",
-        "alimentation": "Poisson"
-    },
-    {
-        "nom": "Pingouin",
-        "classe": "Oiseau",
-        "habitat": "Régions polaires",
-        "alimentation": "Poisson"
-    },
-    {
-        "nom": "Serpent",
-        "classe": "Reptile",
-        "habitat": "Divers",
-        "alimentation": "Carnivore"
-    },
-    {
-        "nom": "Éléphant",
-        "classe": "Mammifère",
-        "habitat": "Forêt tropicale",
-        "alimentation": "Herbivore"
-    }
-  ]
+{
+    "utilisateurs": [
+      {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "email": "jean.dupont@example.com"
+      },
+      {
+        "id": 2,
+        "nom": "Martin",
+        "prenom": "Sophie",
+        "email": "sophie.martin@example.com"
+      },
+      {
+        "id": 3,
+        "nom": "Lefevre",
+        "prenom": "Pierre",
+        "email": "pierre.lefevre@example.com"
+      }
+    ],
+    "commentaires": [
+      {
+        "id": 1,
+        "date_creation_commentaire": "2023-01-15",
+        "utilisateur_id": 1,
+        "technologie_id": 1,
+        "contenu": "C'est une excellente technologie!"
+      },
+      {
+        "id": 2,
+        "date_creation_commentaire": "2023-02-20",
+        "utilisateur_id": 2,
+        "technologie_id": 2,
+        "contenu": "Besoin d'améliorations."
+      },
+      {
+        "id": 3,
+        "date_creation_commentaire": "2023-03-10",
+        "utilisateur_id": 3,
+        "technologie_id": 1,
+        "contenu": "Facile à utiliser."
+      }
+    ],
+    "technologies": [
+      {
+        "id": 1,
+        "nom_techno": "API REST"
+      },
+      {
+        "id": 2,
+        "nom_techno": "Framework JavaScript"
+      },
+      {
+        "id": 3,
+        "nom_techno": "Base de données NoSQL"
+      }
+    ]
+  }
+  
