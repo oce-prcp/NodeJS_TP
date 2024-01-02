@@ -1,0 +1,32 @@
+[
+    {
+        "nom": "Lion",
+        "classe": "Mammifère",
+        "habitat": "Savane",
+        "alimentation": "Carnivore"
+    },
+    {
+        "nom": "Dauphin",
+        "classe": "Mammifère",
+        "habitat": "Océans",
+        "alimentation": "Poisson"
+    },
+    {
+        "nom": "Pingouin",
+        "classe": "Oiseau",
+        "habitat": "Régions polaires",
+        "alimentation": "Poisson"
+    },
+    {
+        "nom": "Serpent",
+        "classe": "Reptile",
+        "habitat": "Divers",
+        "alimentation": "Carnivore"
+    },
+    {
+        "nom": "Éléphant",
+        "classe": "Mammifère",
+        "habitat": "Forêt tropicale",
+        "alimentation": "Herbivore"
+    }
+  ]
