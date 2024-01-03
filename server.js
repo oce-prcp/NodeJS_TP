@@ -1,37 +1,10 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const mysql = require('mysql');
 
 const data = JSON.parse(fs.readFileSync('infos.json', 'utf8'));
 
 app.use(express.json())
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'exo_users'
-  });
-  
-  connection.connect(err => {
-    if (err) {
-      console.error('Erreur de connexion à la base de données :', err);
-      return;
-    }
-    console.log('Connexion à la base de données réussie');
-  });
-  
-  app.get('/utilisateurs', (req, res) => {
-    connection.query('SELECT * FROM utilisateur', (err, results) => {
-      if (err) {
-        res.status(500).json({ error: 'Erreur lors de la récupération des utilisateurs' });
-        return;
-      }
-      res.json(results);
-    });
-});
-
 
 function saveData() {
     fs.writeFileSync('infos.json', JSON.stringify(data, null, 2), 'utf8');
@@ -101,6 +74,12 @@ function printCommentsBeforeDate(dateLimite) {
 }
 
 app.get('/', (req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('<h1> Hello welcome to my home page ! </h1>');
+    }
+);
+
+app.get('/utilisateurs', (req, res) => {
     res.status(200).json(data.utilisateurs);
     }
 );
