@@ -2,21 +2,27 @@
     "utilisateurs": [
       {
         "id": 1,
-        "nom": "Dupont",
-        "prenom": "Jean",
-        "email": "jean.dupont@example.com"
+        "nom": "Wheeler",
+        "prenom": "Oceane",
+        "email": "oceane.wheeler@example.com",
+        "password": "motdepasse",
+        "role": "administrateur"
       },
       {
         "id": 2,
-        "nom": "Martin",
-        "prenom": "Sophie",
-        "email": "sophie.martin@example.com"
+        "nom": "Khlein",
+        "prenom": "Falco",
+        "email": "falco.khlein@example.com",
+        "password": "123",
+        "role": "journaliste"
       },
       {
         "id": 3,
-        "nom": "Lefevre",
-        "prenom": "Pierre",
-        "email": "pierre.lefevre@example.com"
+        "nom": "Shelby",
+        "prenom": "Sarah",
+        "email": "sarah.shelby@example.com",
+        "password": "mdp",
+        "role": "journaliste"
       }
     ],
     "commentaires": [
@@ -25,35 +31,47 @@
         "date_creation_commentaire": "2023-01-15",
         "utilisateur_id": 1,
         "technologie_id": 1,
-        "contenu": "C'est une excellente technologie!"
+        "contenu": "C'est une excellente technologie!",
+        "message": "Nouveau commentaire ajouté pour cette technologie."
+
       },
       {
         "id": 2,
         "date_creation_commentaire": "2023-02-20",
         "utilisateur_id": 2,
         "technologie_id": 2,
-        "contenu": "Besoin d'améliorations."
+        "contenu": "Besoin d'améliorations.",
+        "message": "Modification du commentaire."
+
       },
       {
         "id": 3,
         "date_creation_commentaire": "2023-03-10",
         "utilisateur_id": 3,
         "technologie_id": 1,
-        "contenu": "Facile à utiliser."
+        "contenu": "Facile à utiliser.",
+        "message": "Un autre commentaire pour cette technologie."
+
       }
     ],
     "technologies": [
       {
         "id": 1,
-        "nom_techno": "API REST"
+        "nom_techno": "API REST",
+        "date_creation": "2023-12-05",
+        "nom_createur": "James Harper"
       },
       {
         "id": 2,
-        "nom_techno": "Framework JavaScript"
+        "nom_techno": "Framework JavaScript",
+        "date_creation": "2023-11-20",
+        "nom_createur": "Adonis West"
       },
       {
         "id": 3,
-        "nom_techno": "Base de données NoSQL"
+        "nom_techno": "Base de données NoSQL",
+        "date_creation": "2023-11-20",
+        "nom_createur": "Zayden Owens"
       }
     ]
   }
