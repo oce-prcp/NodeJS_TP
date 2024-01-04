@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 02 jan. 2024 à 16:17
+-- Généré le : jeu. 04 jan. 2024 à 09:30
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.2.0
 
@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `utilisateur_id` int DEFAULT NULL,
   `technologie_id` int DEFAULT NULL,
   `contenu` text,
+  `message` text,
   PRIMARY KEY (`id`),
   KEY `utilisateur_id` (`utilisateur_id`),
   KEY `technologie_id` (`technologie_id`)
@@ -49,6 +50,8 @@ DROP TABLE IF EXISTS `technologie`;
 CREATE TABLE IF NOT EXISTS `technologie` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom_techno` varchar(100) NOT NULL,
+  `date_creation` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `nom_createur` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -64,6 +67,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `role` enum('journaliste','administrateur') DEFAULT 'journaliste',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
